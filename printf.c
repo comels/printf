@@ -24,21 +24,24 @@ int _printf(const char *format, ...)
 
 
 	while (format[i] != '\0')
-		if (format[i] != '%')
 	{
+		if (format[i] != '%')
+		{
 		_putchar (format[i]);
 		i++;
-	}
-		else if (format[i] == '%')
+		}
+		else
 		{
-			while (*func[j].c == format[i + 1])
+			while (*func[j].c != format[i + 1])
 			{
-				func[j].f(args);
+				if (
+						func[j].f(args);
 				j++;
 			}
 			_putchar('%');
 			i++
 		}
+	}
 return(0);		
 	
 
