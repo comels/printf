@@ -19,35 +19,29 @@ int _printf(const char *format, ...)
 		{"d", print_double},
 		{NULL, NULL}
 	};
-	
-	va_start(args, format);
 
+	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
-		_putchar (format[i]);
-		i++;
+			_putchar (format[i]);
+			i++;
 		}
 		else
 		{
-			while (*func[j].c != format[i + 1])
+			i++;
+			for (j = 0; format[i] == func[j].c; j++)
 			{
-				if (
-						func[j].f(args);
-				j++;
+				func[j].f(args);
 			}
-			_putchar('%');
-			i++
 		}
 	}
+va_end(args);	
 return(0);		
 	
-
 }
-
-
 /**
 * print_char - fonction
 *
