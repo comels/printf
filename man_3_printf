@@ -1,0 +1,106 @@
+.\" Manpage for _printf
+
+.TH man 8 "14 mars 2022" "1.0" "_printf man page"
+
+.SH NAME
+_printf – prints out the arguments passed to it to the standard output
+
+.SH SYNOPSIS
+int _printf(const char *format, …)
+_printf [OPTIONS][ARGUMENTS]...
+
+.SH DESCRIPTION
+Prints ARGUMENTS as passed or according to identifier. Execute according to
+options.
+
+	SPECIAL CHARACTERS
+
+	 \\\"     double quote
+
+       	\\\\     backslash
+
+       	\\a     alert (BEL)
+
+       	\\b     backspace
+
+       	\\c     produce no further output
+
+       	\\e     escape
+
+       	\\f     form feed
+
+       	\\n     new line
+
+       	\\r     carriage return
+
+       	\\t     horizontal tab
+
+       	\\v     vertical tab
+
+	CONVERSION IDENTIFIERS
+
+		%%	percentage
+
+		%c	character
+
+		%i	integer
+
+		%d	double
+
+		%s	string
+
+		%b	the unsigned int argument is converted to binary
+
+		%u
+
+		%o
+
+		%x
+
+		%X
+
+		%S	prints the string
+
+		%p	prints values at pointer
+
+		%r	prints the reversed string
+
+		%R	prints the rot13'ed string
+
+		%l
+
+		%h
+
+	FLAGS
+
+		+
+
+		space
+
+		#
+
+		0
+
+		-
+
+
+.SH EXAMPLES
+	_printf("Hello School!"\\n);
+
+	OUTPUT
+		Hello School!
+
+	int a = 7
+	_printf("\%i\\n" , a);
+
+	OUTPUT
+		7
+
+.SH SEE ALSO
+printf(3)
+
+.SH AUTHOR
+
+rafyc - https://github.com/rafyc/
+
+comels - https://github.com/comels
