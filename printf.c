@@ -34,16 +34,24 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; format[i + 1] != *(func[j].c)
-				   && *(func[j].c) != '\0'; j++);
-
-			if (format[i + 1] == *(func[j].c))
+			if (format[i + 1] == '%' || format[i + 1] == '\0')
 			{
-				func[j].f(args);
+				_putchar('%');
 				i+=2;
+			}
+			else
+			{
+				for (j = 0; format[i + 1] != *(func[j].c)
+					     && *(func[j].c) != '\0'; j++)
+					;
+				if (format[i + 1] == *(func[j].c))
+				{
+					func[j].f(args);
+					i+=2;
+				}
 			}
 		}
 	}
 	va_end(args);
-	return(i);
+	return (i);
 }
