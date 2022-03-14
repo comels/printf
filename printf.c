@@ -23,16 +23,16 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			 n++;
+			n++;
 		}
 		else if (format[i + 1] == '\0' || format[i + 1] == '%')
-			_putchar('%');
+			_putchar('%'), i++, n++;
 		else
 		{
 			j = 0;
 			while (*(func[j].c) != '\0')
 			{
-				if(format[i + 1] == *(func[j].c))
+				if (format[i + 1] == *(func[j].c))
 				{
 					n += func[j].f(args);
 					i++;
@@ -40,10 +40,10 @@ int _printf(const char *format, ...)
 				j++;
 			}
 			if (*(func[j].c) == '\0')
-				{
-					_putchar(format[i]), n++;
-					_putchar(format[i + 1]), n++;
-				}
+			{
+				_putchar(format[i]), n++;
+				_putchar(format[i + 1]), n++;
+			}
 		}
 	}
 	va_end(args);
