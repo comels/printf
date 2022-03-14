@@ -16,9 +16,6 @@ int _printf(const char *format, ...)
 		{"d", print_d}, {"i", print_i}, {"\0", NULL}
 	};
 
-	if (va_arg(args,void *) == NULL)
-			return(-1);
-
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
