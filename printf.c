@@ -9,7 +9,8 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	int j;
+	int j = 0;
+	int k = 0;
 	va_list args;
 
 	print func[] = {
@@ -38,6 +39,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				i+=2;
+				k++;
 			}
 			else
 			{
@@ -48,10 +50,18 @@ int _printf(const char *format, ...)
 				{
 					func[j].f(args);
 					i+=2;
+					k++;
+				}
+				else
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					i+=2;
+					k++;
 				}
 			}
 		}
 	}
 	va_end(args);
-	return (i);
+	return (i - k);
 }
