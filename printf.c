@@ -12,16 +12,16 @@ int _printf(const char *format, ...)
 	int j;
 	va_list args;
 
-	struct func[] = {
+	print func[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{"i", print_int},
 		{"d", print_double},
-		{NULL, NULL}
+		{"\0", NULL}
 	};
 
 	if (format == NULL)
-		return (NULL);
+		return (0);
 
 	va_start(args, format);
 
@@ -34,10 +34,10 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; format[i + 1] != func[j].c
-				     || format[i + 1] != NULL; j++)
+			for (j = 0; format[i + 1] != *func[j].c
+				     || format[i + 1] != '\0'; j++)
 			{
-				if (format[i + 1] == func[j].c)
+				if (format[i + 1] == *(func[j].c))
 				{
 					func[j].f(args);
 					i++;

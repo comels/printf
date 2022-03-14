@@ -5,10 +5,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-typedef struct func{
+typedef struct func {
 	char *c;
 	void (*f)(va_list args);
-} struct;
+} print;
 
 int _printf(const char *format, ...);
 int _putchar(char c);

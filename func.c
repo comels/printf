@@ -8,7 +8,7 @@
 
 void print_char(va_list args)
 {
-	_putchar(va_arg(args, char);
+	_putchar(va_arg(args, int));
 }
 
 /**
@@ -19,11 +19,11 @@ void print_char(va_list args)
 
 void print_str(va_list args)
 {
-	char *str = va_arg(args, char*)
-	{
-		for (i = 0; str[i] != '\0'; i++)
+	char *str = va_arg(args, char*);
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-	}
 }
 
 /**
@@ -34,7 +34,7 @@ void print_str(va_list args)
 
 void print_int(va_list args)
 {
-	_putchar(va_arg(args, int);
+	_putchar(va_arg(args, int));
 }
 
 /**
