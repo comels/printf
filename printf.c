@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	print func[] = {
 		{"c", print_char},
 		{"s", print_str},
-	/**	{"i", print_int},
-		{"d", print_double},
-	*/	{"\0", NULL}
+	        {"d", print_d},
+		{"i", print_i},
+		{"\0", NULL}
 	};
 
 	if (format == NULL)
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == *(func[j].c))
 			{
 				func[j].f(args);
-				i++;
+				i+=2;
 			}
 		}
 	}
