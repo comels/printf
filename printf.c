@@ -4,7 +4,7 @@
  * _printf - maint function
  * @format: main param
  * Return : int
-*/
+ */
 
 int _printf(const char *format, ...)
 {
@@ -34,14 +34,17 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; format[i + 1] != func[j].c || format[i + 1] != NULL; j++)
+			for (j = 0; format[i + 1] != func[j].c
+				     || format[i + 1] != NULL; j++)
 			{
-				if (format[i + 1] == func[j].c
-						func[j].f(args);
+				if (format[i + 1] == func[j].c)
+				{
+					func[j].f(args);
+					i++;
+				}
 			}
 		}
 	}
-va_end(args);	
-return(0);		
-	
+	va_end(args);
+	return(i);
 }
