@@ -1,5 +1,5 @@
 .\" Manpage for _printf
-
+.\" Contact rapha.chemouni@gmail.com or come.l.s@hotmail.fr
 .TH man 8 "14 mars 2022" "1.0" "_printf man page"
 
 .SH NAME
@@ -85,16 +85,16 @@ options.
 
 
 .SH EXAMPLES
-	_printf("Hello School!"\\n);
+	_printf("Best School!"\\n);
 
 	OUTPUT
-		Hello School!
+		Best School!
 
-	int a = 7
+	int a = 9
 	_printf("\%i\\n" , a);
 
 	OUTPUT
-		7
+		9
 
 .SH SEE ALSO
 printf(3)
