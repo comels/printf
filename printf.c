@@ -9,10 +9,10 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	int j = 0;
+	int j;
 	va_list args;
 
-	struc func[] = {
+	struct func[] = {
 		{"c", print_char},
 		{"s", print_str},
 		{"i", print_int},
@@ -20,21 +20,24 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
+	if (format == NULL)
+		return (NULL);
+
 	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
-			_putchar (format[i]);
+			_putchar(format[i]);
 			i++;
 		}
 		else
 		{
-			i++;
-			for (j = 0; format[i] == func[j].c; j++)
+			for (j = 0; format[i + 1] != func[j].c || format[i + 1] != NULL; j++)
 			{
-				func[j].f(args);
+				if (format[i + 1] == func[j].c
+						func[j].f(args);
 			}
 		}
 	}
