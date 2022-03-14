@@ -15,9 +15,9 @@ int _printf(const char *format, ...)
 	print func[] = {
 		{"c", print_char},
 		{"s", print_str},
-		{"i", print_int},
+	/**	{"i", print_int},
 		{"d", print_double},
-		{"\0", NULL}
+	*/	{"\0", NULL}
 	};
 
 	if (format == NULL)
@@ -34,14 +34,13 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; format[i + 1] != *func[j].c
-				     || format[i + 1] != '\0'; j++)
+			for (j = 0; format[i + 1] != *(func[j].c)
+				   && *(func[j].c) != '\0'; j++);
+
+			if (format[i + 1] == *(func[j].c))
 			{
-				if (format[i + 1] == *(func[j].c))
-				{
-					func[j].f(args);
-					i++;
-				}
+				func[j].f(args);
+				i++;
 			}
 		}
 	}
