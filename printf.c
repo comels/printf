@@ -12,39 +12,25 @@ int _printf(const char *format, ...)
 	va_list args;
 
 	print func[] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"d", print_d},
-		{"i", print_i},
-		{"\0", NULL}
+		{"c", print_char}, {"s", print_str},
+		{"d", print_d}, {"i", print_i}, {"\0", NULL}
 	};
-
 	if (format == NULL)
 		return (0);
 	va_start(args, format);
-	while (format[i] != '\0')
+	for (i = 0; format[i]; i++)
 	{
 		for (j = 0; format[i + 1] != *(func[j].c)
 			     && *(func[j].c) != '\0'; j++)
 			;
 		if (format[i] != '%')
-			_putchar(format[i]), i++;
-		else if (format[i + 1] == '%' || format[i + 1] == '\0')
-		{
-			_putchar('%');
-			i += 2, k++;
-		}
-		else if (format[i + 1] == *(func[j].c))
-		{
-			func[j].f(args);
-			i += 2, k++;
-		}
-		else
-		{
 			_putchar(format[i]);
-			_putchar(format[i + 1]);
-			i += 2, k++;
-		}
+		else if (format[i + 1] == '%' || format[i + 1] == '\0')
+			_putchar('%'), i++, k++;
+		else if (format[i + 1] == *(func[j].c))
+			func[j].f(args), i++, k++;
+		else
+			_putchar(format[i]), _putchar(format[i + 1]), i++, k++;
 	}
 	va_end(args);
 	return (i - k);
