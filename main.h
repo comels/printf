@@ -13,14 +13,13 @@
 typedef struct func
 {
 	char *c;
-	void (*f)(va_list args);
+	int (*f)(va_list args);
 } print;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_str(va_list args);
-void print_d(va_list args);
-void print_i(va_list args);
-void print_char(va_list args);
+int print_str(va_list args);
+int print_d(va_list args);
+int print_char(va_list args);
 
 #endif
