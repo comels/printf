@@ -27,7 +27,7 @@ void print_str(va_list args)
 }
 
 /**
- * print_int - fonction
+ * print_d - fonction
  * @args: param
  * Return: void
  */
@@ -58,7 +58,7 @@ void print_d(va_list args)
 }
 
 /**
- * print_double - fonction
+ * print_i - fonction
  * @args: param
  * Return: void
  */

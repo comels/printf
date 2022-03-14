@@ -5,7 +5,13 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-typedef struct func {
+/**
+ * struct func - fonction
+ * @c: caractère
+ * @f: fonction
+ */
+typedef struct func
+{
 	char *c;
 	void (*f)(va_list args);
 } print;
