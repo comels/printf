@@ -52,24 +52,28 @@ int print_d(va_list args)
 	int Div = 1;
 	int n;
 	int i = 0;
+	unsigned int x = 0;
 
 	n = va_arg(args, int);
+	x = n;
 
 	if (n == 0)
 		_putchar(48), i++;
 	else if (n < 0)
 	{
 		_putchar('-'), i++;
-		n = n * -1;
+		x = n * -1;
 	}
-	while (n / Div * 10 != 0)
+	while (x / Div * 10 != 0)
 		Div = Div * 10;
 	Div /= 10;
 	while (Div > 0)
 	{
-		_putchar((n / Div) + 48), i++;
-		n = n % Div;
+		_putchar((x / Div) + 48);
+		i++;
+		x = x % Div;
 		Div = Div / 10;
 	}
-	return (i + 1);
+	printf("\ni = %d\n", i);
+	return (i);
 }
