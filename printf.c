@@ -27,7 +27,10 @@ int _printf(const char *format, ...)
 			while (*(func[j].c) != '\0')
 			{
 				if (format[i + 1] == *(func[j].c))
-					n += func[j].f(args), i++, break;
+				{
+					n += func[j].f(args), i++;
+					break;
+				}
 				j++;
 			}
 			if (*(func[j].c) == '\0')
