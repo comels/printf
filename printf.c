@@ -30,8 +30,7 @@ int _printf(const char *format, ...)
 				{
 					n += func[j].f(args), i++;
 					break;
-				}
-				j++;
+				}j++;
 			}
 			if (*(func[j].c) == '\0')
 			{
