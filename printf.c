@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	};
 	if (format == NULL)
 		return (-1);
+
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -25,11 +26,7 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			n++;
 		}
-		else if (format[i + 1] == '\0' || format[i + 1] == '%')
-		{
-			_putchar('%'),i++, n++;
-		}
-		else
+		else if (format[i + 1])
 		{
 			j = 0;
 			while (*(func[j].c) != '\0')
@@ -37,17 +34,21 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *(func[j].c))
 				{
 					n += func[j].f(args);
-					i ++;
+					i++;
 					break;
 				}
 				j++;
 			}
-			
 			if (*(func[j].c) == '\0')
+			{
+				if (format[i + 1] == '%')
+					_putchar('%'),i++, n++;
+				else
 				{
 					_putchar('%');
-					_putchar(format[i + 1]), n++;
+					_putchar(format[i + 1]), n += 2, i++;
 				}
+			}
 		}
 	}
 	va_end(args);
