@@ -23,9 +23,12 @@ int print_str(va_list args)
 	char *str = va_arg(args, char*);
 	int i;
 
+	if (str == NULL)
+		return (0);
+
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-	return (i - 1);
+	return (i);
 }
 
 /**
@@ -46,7 +49,7 @@ int print_d(va_list args)
 		_putchar(48), i++;
 	else if (n < 0)
 	{
-		_putchar(45), i++;
+		_putchar('-'), i++;
 		n = n * -1;
 	}
 	while (n / Div * 10 != 0)
@@ -58,5 +61,5 @@ int print_d(va_list args)
 		n = n % Div;
 		Div = Div / 10;
 	}
-	return (i);
+	return (i + 1);
 }

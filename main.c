@@ -46,5 +46,8 @@ int main(void)
     printf("%?\n");
     _printf("%K\n");
     printf("%k\n");
+    len = _printf("%d\n", 1234);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len);
     return (0);
 }
