@@ -52,5 +52,7 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(args);
+	if (n == 0)
+		return (-1);
 	return (n);
 }
