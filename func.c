@@ -74,6 +74,5 @@ int print_d(va_list args)
 		x = x % Div;
 		Div = Div / 10;
 	}
-	printf("\ni = %d\n", i);
 	return (i);
 }
