@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 			if (*(func[j].c) == '\0')
 			{
 				if (format[i + 1] == '%')
-					_putchar('%'),i++, n++;
+					_putchar('%'), i++, n++;
 				else
 				{
 					_putchar('%');
