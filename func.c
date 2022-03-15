@@ -33,7 +33,7 @@ int print_str(va_list args)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
-		return (5);
+		return (6);
 	}
 
 	for (i = 0; str[i] != '\0'; i++)
