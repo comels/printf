@@ -11,7 +11,7 @@ The `_printf` function was coded on an Ubuntu 14.04 LTS machine with `gcc` versi
 ## Usage :running:
 
 To use the `_printf` function, assuming the above dependencies have been installed,
-compile all `.c` files in the repository and include the header `holberton.h` with
+compile all `.c` files in the repository and include the header `main.h` with
 any main function.
 
 Example `main.c`:
@@ -147,5 +147,5 @@ that prepares students for careers in the tech industry using project-based
 peer learning. For more information, visit [this link](https://www.holbertonschool-france.com/).
 
 <p align="center">
-  <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" width="100" alt="Holberton School logo">
+  <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" align="left" width="100" alt="Holberton School logo">
 </p>
