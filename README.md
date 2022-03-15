@@ -16,7 +16,7 @@ any main function.
 
 Example `main.c`:
 ```
-#include "holberton.h"
+#include "main.h"
 
 int main(void)
 {
@@ -65,35 +65,12 @@ zero or more _flags_, an optional minimum _field width_, an optional
 _precision_ and an optional _length_ modifier. The arguments must correspond
 with the conversion specifier, and are used in the order given.
 
-#### Flag Characters
-
-The character `%` may be followed by zero or more of the following flags:
-
-#### #
-  * For `o` conversions, the first character of the output string is prefixed
-  with `0` if it was not zero already.
-  * For `x` converions, `0x` is prepended for non-zero numbers.
-  * For `X` conversions, `0X` is prepeneded for non-zero numbers.
-
-Example `main.c`:
-```
-int main(void)
-{
-    _printf("%#x\n", 7);
-}
-```
-Output:
-```
-0x7
-```
 #### d, i
-The `int` argument is converted to signed decimal notation.
-
 Example `main.c`:
 ```
 int main(void)
 {
-    _printf("%d\n", 0);
+    _printf("%d\n", 9);
 }
 ```
 Output:
@@ -152,7 +129,7 @@ Output:
 ## Authors :black_nib:
 
 * Raphaël Chemouni <[rafyc](https://github.com/rafyc)>
-* Côme le Sauter <[Comels](https://github.com/comels)>
+* Côme le Sauter <[comels](https://github.com/comels)>
 
 ## License :lock:
 
@@ -167,8 +144,8 @@ function `printf`. This README borrows from the Linux man page
 This program was written as part of the curriculum for Holberton School.
 Holberton School is a campus-based full-stack software engineering program
 that prepares students for careers in the tech industry using project-based
-peer learning. For more information, visit [this link](https://www.holbertonschool.com/).
+peer learning. For more information, visit [this link](https://www.holbertonschool-france.com/).
 
 <p align="center">
-  <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" alt="Holberton School logo">
+  <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" width="100" alt="Holberton School logo">
 </p>
