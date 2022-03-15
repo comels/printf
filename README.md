@@ -156,7 +156,7 @@ Output:
 
 ## License :lock:
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the <[LICENSE](https://fr.wikipedia.org/wiki/Licence_MIT)>file for details.
 
 ## Acknowledgements :pray:
 
@@ -170,5 +170,5 @@ that prepares students for careers in the tech industry using project-based
 peer learning. For more information, visit [this link](https://www.holbertonschool.com/).
 
 <p align="center">
-  <img src="http://www.holbertonschool.com/holberton-logo.png" alt="Holberton School logo">
+  <img src="https://blog.holbertonschool.com/wp-content/uploads/2020/04/unnamed-2.png" alt="Holberton School logo">
 </p>
