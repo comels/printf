@@ -6,6 +6,8 @@
 _printf – prints out the arguments passed to it to the standard output
 
 .SH SYNOPSIS
+#include "main.h"
+
 int _printf(const char *format, …)
 _printf [OPTIONS][ARGUMENTS]...
 
@@ -83,6 +85,9 @@ options.
 
 		-
 
+.SH RETURN VALUE
+    If the function fails return (-1), otherwise return the number of
+    displayed characters (n).
 
 .SH EXAMPLES
 	_printf("Best School!"\\n);
