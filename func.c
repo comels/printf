@@ -83,4 +83,3 @@ int print_d(va_list args)
 	digits++;
 	return (digits);
 }
-
